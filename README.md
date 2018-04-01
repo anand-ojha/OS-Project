@@ -7,3 +7,5 @@ Priority = 1+ Waiting time / Estimated run time
 Initially, i understood what is shortest job first algoritm for scheduling approach. Then i learnt about preemptive and non preemptive scheduling. 
 
 After this, I made a c program which takes input from user for number of processes and then their burst time respectively. then, it schedules all the processes based on shortest job first non preemptive scheduling.
+
+Then i have added priorites for each process. The priorities are entered by the user while giving their burst times. Then, the process is executed best o their priority. If the priority of any 2 process is same, then the process having less burst time will runn first,i.e. here, shortest job first come into account.
