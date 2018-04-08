@@ -23,7 +23,7 @@ void getValue(int n)
 
 void sortValue(int n)
 {
-	int i,p,j,t;
+	int i,p,j,t,b=0,m,k=1;
 	start[0]=0;
 	for (i=0;i<n;i++)
 		{
@@ -56,31 +56,27 @@ void sortValue(int n)
 			at[i]=at[p];
 			at[p]=t;
 			
-			start[i]=start[i]+bt[i-1];
 		}
 }
 
 void calcWT(int n)
 {
-	int i,j;
+	int i,j,add=0;
 		wt[0]=0;	
 		for (i=1;i<n;i++)
 		{
-			wt[i]=start[i]-at[i];
-			for(j=0;j<i;j++)
-			{
-				wt[i]=start[i]-at[i];
-			}
+			add=add+bt[i-1];
+			wt[i]=add-at[i];
 		} 
 }
 
 void calcTT(int n)
 {
-	int i;
-	tt[0]=bt[0];
-	for(i=1;i<n;i++)
+	int i,tat=0;
+	for(i=0;i<n;i++)
 	{
-		tt[i]=bt[i]+wt[i];
+		tat=tat+bt[i];
+		tt[i]=tat-at[i];
 	}
 }
 
@@ -130,6 +126,7 @@ int main()
 
 	printf("\n\t\t\t\t\t\t-------------SHORTEST JOB FIRST (NON PREEMPTIVE)-------------\n\n");
 	printf("\n\t\t\t\t\t\t\t-------------With Process Priorities-------------\n\n");
+	printf
 	printf("enter the total number of processes : ");
 	int n;
 	scanf("%d",&n);
